@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block title %}Eventos de Reposicao{% endblock %} {% block content %}
+<table border="1px" style="margin-bottom: 50px;">
+    <thead>
+        <tr>
+            <th colspan="7">Todos os Eventos de Reposicao da IVM {{ info[0] }} - {{ info[1] }}
+
+            </th>
+        </tr>
+        <tr>
+            <th>Produto (EAN)</th>
+            <th>NRO</th>
+            <th>IVM (Numero de Serie)</th>
+            <th>IVM (Fabricante)</th>
+            <th>Instante</th>
+            <th>Unidades</th>
+            <th>Retalhista (TIN) </th>
+        </tr>
+    </thead>
+    <tbody> {% for erep in ereps %}
+
+        <tr> {% for erep_inf in erep %}
+
+            <td style="text-align:center"> {{ erep_inf }}
+
+            </td> {% endfor %}
+
+        </tr> {% endfor %}
+
+    </tbody>
+</table>
+
+<table border="1px">
+    <thead>
+        <tr>
+            <th colspan="7">Soma de Unidades Repostas por Categoria da IVM {{ info[0] }} - {{ info[1] }}
+
+            </th>
+        </tr>
+        <tr>
+            <th>Categoria</th>
+            <th>Soma das Unidades</th>
+        </tr>
+    </thead>
+    <tbody> {% for sum in sums %}
+        <tr> {% for sum_inf in sum %}
+            <td> {{ sum_inf }}
+            </td> {% endfor %}
+        </tr> {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

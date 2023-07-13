@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block title %}Lista Categorias{% endblock %} {% block content %}
+<table border="1px" style="float: left">
+    <thead>
+        <tr>
+            <th>Super Categorias</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s_cat in s_cats %}
+        <tr>
+            <td> <a href="./cat/{{s_cat[0]}}">
+                    {{s_cat[0]}}
+                </a>
+            </td>
+            <td>
+                <a href="./del/{{s_cat[0]}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<table border="1px" style="float: left">
+    <thead>
+        <tr>
+            <th>Categorias Simples</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cat_s in cats_s %}
+        <tr>
+            <td>
+                {{cat_s[0]}}
+            </td>
+            <td>
+                <a href="./del/{{cat_s[0]}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<table border="1px" style="float: left">
+    <thead>
+        <tr>
+            <th>Todas as Categorias</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cat in cats %}
+        <tr>
+            <td>
+
+                {{cat[0]}}
+
+            </td>
+            <td>
+                <a href="./del/{{cat[0]}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>{% endblock %}

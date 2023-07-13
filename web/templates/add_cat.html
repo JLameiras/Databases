@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block title %}Adicionar Categorias{% endblock %} {% block content %}
+
+<form action="add_cat" method="post">
+    <p>Nome da Categoria a Adicionar:</p>
+    <p>
+        <input name="novo"></input>
+    </p>
+    <p><input type="submit" value="Submit"> </p>
+</form>{% endblock %}

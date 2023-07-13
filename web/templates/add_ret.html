@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %}Adicionar Retalhista{% endblock %} {% block content %}
+
+<form action="add_ret" method="post">
+    <p>Nome d@ Retalhista:</p>
+    <p>
+        <input name="nome"></input>
+    </p>
+    <p>Tin d@ Retalhista:</p>
+    <p>
+        <input name="tin" type='number' min='0'></input>
+    </p>
+    <p>Responsavel por:</p>
+    <label for="cat">Escolha uma Categoria:</label>
+    <select id="cat" name="cat" size="5" multiple>
+      {% for cat in cats %}
+      <option value="{{cat[0]}}">{{cat[0]}}</option>
+      {% endfor%}
+        </select><br><br>
+    <label for="ivm">Escolha uma IVM:</label>
+    <select id="ivm" name="ivm" size="5" multiple>
+      {% for ivm in ivms %}
+      <option value="{{ivm[1]}}-{{ivm[0]}}">{{ivm[1]}}-{{ivm[0]}}</option>
+      {% endfor%}
+        </select><br><br>
+    <p><input type="submit" value="Submit"> </p>
+</form>{% endblock %}

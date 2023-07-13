@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block title %}Adicionar Subcategoria{% endblock %} {% block content %}
+
+<form action="add_sub" method="post">
+    <label for="super">Escolha uma Categoria:</label>
+    <select id="super" name="super" size="5">
+    {% for cat in cats1 %}
+    <option value="{{cat[0]}}">{{cat[0]}}</option>
+    {% endfor%}
+    </select><br><br>
+
+    <label for="new">Escolha uma Subcategoria:</label>
+    <select id="new" name="new" size="5">
+    {% for cat in cats %}
+    <option value="{{cat[0]}}">{{cat[0]}}</option>
+    {% endfor%}
+    </select><br><br>
+    <input type="submit">
+</form>
+
+
+<table border="1px" style="float: left; margin-top: 50px;">
+    <thead>
+        <tr>
+            <th colspan="3">Relações subcategorias</th>
+        </tr>
+        <tr>
+            <th>Supercategoria</th>
+            <th>Subcategoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rel in rels %}
+        <tr>
+            <td>
+                {{rel[0]}}
+                </a>
+            </td>
+            <td>
+                {{rel[1]}}
+                </a>
+            </td>
+            <td>
+                <a href="./del/{{rel[0]}}/{{rel[1]}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>{% endblock %}

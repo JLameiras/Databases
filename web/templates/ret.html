@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block title %}Lista Categorias{% endblock %} {% block content %}
+<table border="1px" style="float: left">
+    <thead>
+        <tr>
+            <th colspan="4">Retalhistas</th>
+        </tr>
+        <tr>
+            <th>TIN</th>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ret in rets %}
+        <tr>
+            <td>
+                {{ret[0]}}
+            </td>
+            <td>
+                {{ret[1]}}
+            </td>
+            <td>
+                <a href="./del_ret/{{ret[0]}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

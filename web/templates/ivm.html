@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block title %}Lista IVMs{% endblock %} {% block content %}
+<table border="1px" style="float: left">
+    <thead>
+        <tr>
+            <th>Todas as IVMs</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ivm in ivms %}
+        <tr>
+            <td>
+                {{ivm[0]}}
+            </td>
+            <td>
+                {{ivm[1]}}
+            </td>
+            <td>
+                <a href="./ivm/{{ivm[1]}}/{{ivm[0]}}">Eventos de Reposicao</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>{% endblock %}

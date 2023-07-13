@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block title %}Subcategorias{% endblock %} {% block content %}
+
+<table border="1px" style="float: left">
+    <thead>
+        <tr>
+            <th>Subcategorias de {{supercat}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cat in cats %}
+        <tr>
+            <td>
+                {{cat[0]}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
